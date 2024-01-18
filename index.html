@@ -6,129 +6,16 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
-
-  .container {
-    width: 1000px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 100px;
-  }
-
-  .container .btn {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 50px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container .btn a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 10px;
-    letter-spacing: 1px;
-    text-decoration: none;
     overflow: hidden;
-    color: #fff;
-    font-weight: 400px;
-    z-index: 1;
-    transition: 0.5s;
-    backdrop-filter: blur(15px);
-  }
-
-  .container .btn:hover a {
-    letter-spacing: 3px;
-  }
-
-  .container .btn a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
-    transform: skewX(45deg) translate(0);
-    transition: 0.5s;
-    filter: blur(0px);
-  }
-
-  .container .btn:hover a::before {
-    transform: skewX(45deg) translate(200px);
-  }
-
-  .container .btn::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-    bottom: -5px;
-    width: 30px;
-    height: 10px;
-    background: #f00;
-    border-radius: 10px;
-    transition: 0.5s;
-    transition-delay: 0.5;
-  }
-
-  .container .btn:hover::before /*lightup button*/ {
-    bottom: 0;
-    height: 50%;
-    width: 80%;
-    border-radius: 30px;
-  }
-
-  .container .btn::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-    top: -5px;
-    width: 30px;
-    height: 10px;
-    background: #f00;
-    border-radius: 10px;
-    transition: 0.5s;
-    transition-delay: 0.5;
-  }
-
-  .container .btn:hover::after /*lightup button*/ {
-    top: 0;
-    height: 50%;
-    width: 80%;
-    border-radius: 30px;
-  }
-
-  .container .btn:nth-child(1)::before,
-  .container .btn:nth-child(1)::after {
-    background: #FDF375;
-    box-shadow: 0 0 5px #FDF375, 0 0 15px #FDF375, 0 0 30px #FDF375,
-  		0 0 60px #FDF375;
   }
 
 
   .logo {
     position: absolute;
     top: 50px;
-    left: 50%;
+    margin-left: 10px;
+    margin-top: 1px;
+    left: 22%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
@@ -141,27 +28,172 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     object-position: center;
     z-index: -1;
   }
 
+  @media screen and (max-width: 600px) {
+    .logo {
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+    }
+
+  
+
+    .button {
+      transform: translateX(50%);
+      bottom: -50%;
+      margin-top: 20px;
+    }
+
+    .lottie {
+      display: none;
+    }
+
+    .ir{
+      font-size: 52px;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+
+
+    
+
+  }
+
+ 
+
+
+
+
+  
+
+.button::after,
+.button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #B08F0F;
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.button a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: #000000;
+}
+
+.button {
+  padding: 15px 20px;
+  font-size: 32px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  z-index: 1;
+  bottom: -30%;
+  left: -28.5%;
+  width: 300px;
+  height: 100px;
+}
+
+
+h1 {
+    font-size: 60px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-shadow: 0 0 10px #FFBF28;
+    position: absolute;
+    top: 40%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .lottie {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    /* width: 1000px;
+    height: 100px; */
+    /* top: 80px; left: -30px; */
+  }
+
+  #img {
+    width:650px;
+  }
+
+
+
 </style>
 <body>
   <div class="bgimage">
-    <img id="bgimage" src="assets/Group 1.png" alt="">
+    <img id="bgimage" src="assets/div.w-full.png" alt="">
   </div>
 
   <div class="logo">
-    <img src="assets/image.png" alt="">
+    <img id="img" src="assets/image.png" alt=""> <br>
+
   </div>
+    <h1 class="ir">IR PLAN</h1>
 
- 
-	<div class="container">
-		<div class="btn"><a href="http://162.0.228.109/">Get Started</a></div>
-	</div>	
+    <!-- <div class="container">
+      <div class="btn"><a href="http://162.0.228.109/">GET STARTED</a></div>
+    </div>	 -->
 
-</body>
-</html>
+    <button class="button"><a href="http://162.0.228.109/">GET STARTED</a>
+    </button>
+  <div class="lottie">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player src="https://lottie.host/8b286d95-a8f0-43bd-b746-7fa18ec664fb/Xzafm9ueDZ.json" background="transparent" speed="1" style="width: 600px; height: 600px;" loop autoplay></dotlottie-player>
+  </div>
+    </body>
+    </html>
+
